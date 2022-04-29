@@ -19,7 +19,7 @@ shareIcon.addEventListener("mouseleave", () => {
 
 //For Mobile Users
 
-shareIcon.addEventListener("click", () => {
+shareIcon.addEventListener("touchstart", () => {
     tooltips.forEach(tooltip => {
         tooltip.classList.toggle("active");
         container.classList.add("active");
@@ -27,7 +27,7 @@ shareIcon.addEventListener("click", () => {
 })
 
 
-shareIcon.addEventListener("click", () => {
+shareIcon.addEventListener("touchend", () => {
     tooltips.forEach(tooltip => {
         tooltip.classList.remove("active");
         container.classList.remove("active");
