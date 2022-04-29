@@ -1,0 +1,271 @@
+:root {
+    --dark-grayish-blue: hsl(217, 19%, 35%);
+    --desaturated-dark-blue: hsl(214, 17%, 51%);
+    --greyish-blue: hsl(212, 23%, 69%);
+    --light-grayish-blue: hsl(210, 46%, 95%);
+
+    --font: 'Manrope', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+}
+
+main {
+    height: 100vh;
+    background-color: var(--light-grayish-blue);
+    font-family: var(--font);
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.card-container {
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    width: 800px;
+    height: 35vh;
+    border-radius: 20px;
+}
+
+
+.image-container img {
+    width: 400px;
+    overflow: hidden;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.text-container {
+    padding: 1vw 2vw;
+    overflow: visible;
+}
+
+.heading {
+    color: var(--dark-grayish-blue);
+}
+
+.sub-text {
+    color: var(--greyish-blue);
+}
+
+.share-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+
+.icon-share {
+    width: 20px;
+    transition: width .3s ease-in;
+}
+
+.hovered {
+    width: 25px;
+}
+
+
+.profile-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: row;
+    padding-top: 15px;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+}
+
+.profile-image {
+    width: 40px;
+    border-radius: 50%;
+}
+
+.profile-name {
+    font-weight: 700;
+}
+
+.date {
+    color: var(--greyish-blue);
+}
+
+
+/*============TOOLTIP====================================*/
+
+#tooltip-container {
+    padding: 15px;
+    width: 150px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 80%;
+    left: 75%;
+    border-radius: 10px;
+    transition: opacity .4s ease;
+    z-index: 1;
+    transition: opacity .5s ease-in;
+}
+
+#tooltip-edge {
+    position: absolute;
+    bottom: 63%;
+    left: 95%;
+    width: 15px;
+    height: 15px;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    transform: rotate(180deg);
+    z-index: 0;
+    transition: opacity .5s ease-in;
+}
+
+.tooltip {
+    opacity: 0;
+    background-color: #222;
+    color: #fff;
+}
+
+.tooltip.active {
+    opacity: .9;
+}
+
+/*=============TOOLTIP====================================*/
+
+
+
+/*======FOOTER CREDIT======*/
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+
+
+
+@media only screen and (max-width: 900px) {
+    .card-container {
+        display: flex;
+        flex-direction: column;
+        height: 600px;
+        width: 400px;
+    }
+
+    .image-container {
+        width: 400px;
+    }
+
+    .text-container {
+        width: 400px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-around;
+    }
+
+    .heading {
+        margin-bottom: 20px;
+    }
+
+    .image-container img {
+        width: 100%;
+        object-fit: cover;
+        border-radius: 20px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .share-container {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        transition: background-color .5s ease-in;
+        border-radius: 20px;
+    }
+
+    .share-container.active {
+        background-color: #222;
+        border-radius: 20px;
+    }
+
+
+    #tooltip-container {
+        width: 200px;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: absolute;
+        height: 70px;
+        top: 0;
+        left: 0%;
+    }
+
+    .icon-share-container {
+        height: 70px;
+        width: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+    }
+
+    #tooltip-edge {
+        opacity: 0;
+    }
+    #tooltip-edge.active {
+        opacity: 0;
+    }
+
+    .tooltip {
+        opacity: 0;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    body {
+        min-height: 100vh;
+        overflow-x: hidden;
+    }
+    .card-container {
+        width: 330px;
+        height: 550px;
+    }
+
+    .card-text {
+        width: 320px;
+    }
+
+    .heading {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .image-container {
+        width: 330px;
+    }
+
+    .share-container {
+        width: 300px;
+    }
+}
